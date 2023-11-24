@@ -1,12 +1,15 @@
 <template>
   <div class="home-container">
-    <div class="imgBox"><img src="@/assets/vue.svg" alt="" /><img src="@/assets/vite.svg" alt="" /></div>
+    <div class="imgBox" @click="openPopup = true"><img src="@/assets/vue.svg" alt="" /><img src="@/assets/vite.svg" alt="" /></div>
     <div class="title1">vue3 + vite</div>
-    <div class="title2">恭喜你，项目运行成功！</div>
+    <div class="title2">恭喜你，项目运行成功,</div>
     <div class="title3">准备你的开发之旅吧！</div>
+    <side-popup :open="openPopup" @popupClose="openPopup = false">VITE + VUE3 PROJECT</side-popup>
   </div>
 </template>
-<script setup></script>
+<script setup>
+const openPopup = ref(false)
+</script>
 
 <style scoped lang="scss">
 .home-container {
